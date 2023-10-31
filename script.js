@@ -53,6 +53,9 @@ btnRoll.addEventListener('click', function(){
     if (playing){
         //1. Generate random dice roll
         const dice = Math.trunc(Math.random() * 6) + 1
+        let audio = new Audio('Sounds/retro-notif.wav')
+        audio.play()
+
 
         //2. Display the result on screen
         diceEl.classList.remove('hidden')
@@ -74,12 +77,16 @@ btnRoll.addEventListener('click', function(){
 btnHold.addEventListener('click', function(){
     if(playing){
         // 1. Add current score to global score (active player's score)
+        let audio = new Audio('Sounds/theTrueHoldTune.wav')
+        audio.play()
         scores[activePlayer] += currentScore //scores[1] = scores[1] + currentScore
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
         // 2. Check of player's score is  >= 100
         //Finish game
-        if (scores[activePlayer] >= 100){
+        if (scores[activePlayer] >= 20){
+            let audio = new Audio('Sounds/justWon.wav')
+            audio.play()
             playing = false;
             diceEl.classList.add('hidden')
 

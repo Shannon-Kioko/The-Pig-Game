@@ -84,7 +84,7 @@ btnHold.addEventListener('click', function(){
 
         // 2. Check of player's score is  >= 100
         //Finish game
-        if (scores[activePlayer] >= 20){
+        if (scores[activePlayer] >= 100){
             let audio = new Audio('Sounds/justWon.wav')
             audio.play()
             playing = false;
